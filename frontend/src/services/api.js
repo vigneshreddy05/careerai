@@ -1,7 +1,11 @@
 import axios from 'axios';
 
+const API_BASE_URL = (
+  import.meta.env.VITE_API_BASE_URL || 'https://careerai-api-xheu.onrender.com/api'
+).replace(/\/$/, '');
+
 const apiClient = axios.create({
-  baseURL: '/api',
+  baseURL: API_BASE_URL,
   headers: {
     Accept: 'application/json',
   },
