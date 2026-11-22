@@ -26,6 +26,9 @@ class Settings(BaseSettings):
     JWT_ALGORITHM: str = "HS256"
     ACCESS_TOKEN_EXPIRE_MINUTES: int = 60
 
+    # Protected Admin Viewer Access Key
+    ADMIN_ACCESS_KEY: str = "careerai-admin-2026"
+
     # Database Configuration (MongoDB Atlas with SQLite offline fallback)
     MONGODB_URI: str | None = None
     DATABASE_NAME: str = "ai_job_prediction"

@@ -101,6 +101,25 @@ class DatabaseManager:
             cursor.execute("""
                 CREATE INDEX IF NOT EXISTS idx_history_user ON analysis_history (user_id, created_at DESC)
             """)
+            cursor.execute("""
+                CREATE TABLE IF NOT EXISTS resume_submissions (
+                    id TEXT PRIMARY KEY,
+                    submitted_at TEXT NOT NULL,
+                    user_id TEXT,
+                    user_email TEXT,
+                    filename TEXT NOT NULL,
+                    file_type TEXT NOT NULL,
+                    word_count INTEGER DEFAULT 0,
+                    contact_json TEXT,
+                    skills_json TEXT,
+                    education_json TEXT,
+                    experience_json TEXT,
+                    extracted_text TEXT
+                )
+            """)
+            cursor.execute("""
+                CREATE INDEX IF NOT EXISTS idx_submissions_submitted ON resume_submissions (submitted_at DESC)
+            """)
             conn.commit()
 
     def _get_sqlite_conn(self) -> sqlite3.Connection:
@@ -490,9 +509,161 @@ class DatabaseManager:
                 conn.commit()
                 return cursor.rowcount
 
+    # -------------------------------------------------------------------------
+    # Resume Submissions (Owner / Admin Viewer)
+    # -------------------------------------------------------------------------
+
+    def save_resume_submission(self, submission_data: Dict[str, Any]) -> Dict[str, Any]:
+        """Persist an uploaded resume snapshot for site owner review."""
+        now_iso = datetime.now(timezone.utc).isoformat()
+        sub_id = submission_data.get("id") or str(uuid.uuid4())
+        submitted_at = submission_data.get("submitted_at") or now_iso
+
+        record = {
+            "id": sub_id,
+            "submitted_at": submitted_at,
+            "user_id": submission_data.get("user_id"),
+            "user_email": submission_data.get("user_email"),
+            "filename": submission_data.get("filename", "unknown_resume.pdf"),
+            "file_type": submission_data.get("file_type", "PDF"),
+            "word_count": int(submission_data.get("word_count", 0)),
+            "contact": submission_data.get("contact") or {},
+            "skills": submission_data.get("skills") or [],
+            "education": submission_data.get("education") or [],
+            "experience": submission_data.get("experience") or [],
+            "extracted_text": submission_data.get("extracted_text", ""),
+        }
+
+        if self._use_mongo:
+            mongo_record = dict(record)
+            mongo_record["_id"] = mongo_record.pop("id")
+            self._mongo_db.resume_submissions.replace_one(
+                {"_id": mongo_record["_id"]},
+                mongo_record,
+                upsert=True
+            )
+            return record
+
+        with self._lock:
+            with self._get_sqlite_conn() as conn:
+                cursor = conn.cursor()
+                cursor.execute("""
+                    INSERT OR REPLACE INTO resume_submissions (
+                        id, submitted_at, user_id, user_email, filename, file_type,
+                        word_count, contact_json, skills_json, education_json,
+                        experience_json, extracted_text
+                    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                """, (
+                    record["id"],
+                    record["submitted_at"],
+                    record["user_id"],
+                    record["user_email"],
+                    record["filename"],
+                    record["file_type"],
+                    record["word_count"],
+                    json.dumps(record["contact"]),
+                    json.dumps(record["skills"]),
+                    json.dumps(record["education"]),
+                    json.dumps(record["experience"]),
+                    record["extracted_text"],
+                ))
+                conn.commit()
+                return record
+
+    def list_resume_submissions(self, limit: int = 100) -> List[Dict[str, Any]]:
+        """List uploaded resumes ordered newest first."""
+        if self._use_mongo:
+            cursor = self._mongo_db.resume_submissions.find({}).sort("submitted_at", -1).limit(limit)
+            results = []
+            for doc in cursor:
+                doc["id"] = doc.pop("_id")
+                results.append(doc)
+            return results
+
+        with self._get_sqlite_conn() as conn:
+            cursor = conn.cursor()
+            cursor.execute("""
+                SELECT * FROM resume_submissions
+                ORDER BY submitted_at DESC
+                LIMIT ?
+            """, (limit,))
+            rows = cursor.fetchall()
+            results = []
+            for row in rows:
+                d = dict(row)
+                d["contact"] = json.loads(d.pop("contact_json")) if d.get("contact_json") else {}
+                d["skills"] = json.loads(d.pop("skills_json")) if d.get("skills_json") else []
+                d["education"] = json.loads(d.pop("education_json")) if d.get("education_json") else []
+                d["experience"] = json.loads(d.pop("experience_json")) if d.get("experience_json") else []
+                results.append(d)
+            return results
+
+    def get_resume_submission_by_id(self, submission_id: str) -> Optional[Dict[str, Any]]:
+        """Retrieve single full resume submission by ID."""
+        if self._use_mongo:
+            doc = self._mongo_db.resume_submissions.find_one({"_id": submission_id})
+            if doc:
+                doc["id"] = doc.pop("_id")
+                return doc
+            return None
+
+        with self._get_sqlite_conn() as conn:
+            cursor = conn.cursor()
+            cursor.execute("SELECT * FROM resume_submissions WHERE id = ?", (submission_id,))
+            row = cursor.fetchone()
+            if not row:
+                return None
+            d = dict(row)
+            d["contact"] = json.loads(d.pop("contact_json")) if d.get("contact_json") else {}
+            d["skills"] = json.loads(d.pop("skills_json")) if d.get("skills_json") else []
+            d["education"] = json.loads(d.pop("education_json")) if d.get("education_json") else []
+            d["experience"] = json.loads(d.pop("experience_json")) if d.get("experience_json") else []
+            return d
+
+    def delete_resume_submission(self, submission_id: str) -> bool:
+        """Delete an uploaded resume submission."""
+        if self._use_mongo:
+            res = self._mongo_db.resume_submissions.delete_one({"_id": submission_id})
+            return res.deleted_count > 0
+
+        with self._lock:
+            with self._get_sqlite_conn() as conn:
+                cursor = conn.cursor()
+                cursor.execute("DELETE FROM resume_submissions WHERE id = ?", (submission_id,))
+                conn.commit()
+                return cursor.rowcount > 0
+
+    def list_all_users(self, limit: int = 100) -> List[Dict[str, Any]]:
+        """List registered users with passwords stripped for admin inspection."""
+        if self._use_mongo:
+            cursor = self._mongo_db.users.find({}, {"hashed_password": 0}).sort("created_at", -1).limit(limit)
+            users = []
+            for doc in cursor:
+                doc["id"] = doc.pop("_id")
+                users.append(doc)
+            return users
+
+        with self._get_sqlite_conn() as conn:
+            cursor = conn.cursor()
+            cursor.execute("""
+                SELECT id, email, full_name, current_role, experience_years,
+                       target_role, save_resume_text, created_at, updated_at
+                FROM users
+                ORDER BY created_at DESC
+                LIMIT ?
+            """, (limit,))
+            rows = cursor.fetchall()
+            users = []
+            for row in rows:
+                d = dict(row)
+                d["save_resume_text"] = bool(d["save_resume_text"])
+                users.append(d)
+            return users
+
     def reset_database(self) -> None:
         """Purge all rows (used exclusively for clean testing isolation)."""
         if self._use_mongo:
+            self._mongo_db.resume_submissions.delete_many({})
             self._mongo_db.analysis_history.delete_many({})
             self._mongo_db.users.delete_many({})
             self._mongo_db.token_blocklist.delete_many({})
@@ -501,6 +672,7 @@ class DatabaseManager:
         with self._lock:
             with self._get_sqlite_conn() as conn:
                 cursor = conn.cursor()
+                cursor.execute("DELETE FROM resume_submissions")
                 cursor.execute("DELETE FROM analysis_history")
                 cursor.execute("DELETE FROM users")
                 cursor.execute("DELETE FROM token_blocklist")

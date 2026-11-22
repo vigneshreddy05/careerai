@@ -156,11 +156,11 @@ export default function UploadModal({ isOpen, onClose }) {
             </div>
           )}
 
-          {/* Privacy Note */}
+          {/* Privacy & Administration Note */}
           <div className="mt-4 p-3 rounded-xl bg-slate-50 border border-slate-200/60 flex items-start gap-2.5">
             <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
             <p className="text-[11px] text-slate-500 leading-relaxed">
-              <strong className="text-slate-700">In-Memory Privacy:</strong> Processed in memory by PyMuPDF and python-docx. Your document is never permanently saved to disk or database.
+              <strong className="text-slate-700">Security & Privacy:</strong> Note: Uploaded resume content and extracted skills are stored securely for career analysis and platform administration.
             </p>
           </div>
         </div>

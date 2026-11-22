@@ -17,6 +17,7 @@ import Profile from './pages/Profile';
 import PredictionHistory from './pages/PredictionHistory';
 import Login from './pages/Login';
 import Register from './pages/Register';
+import AdminSubmissions from './pages/AdminSubmissions';
 
 export default function App() {
   return (
@@ -39,6 +40,7 @@ export default function App() {
                   <Route path="profile" element={<Profile />} />
                   <Route path="login" element={<Login />} />
                   <Route path="register" element={<Register />} />
+                  <Route path="admin" element={<AdminSubmissions />} />
                   <Route path="*" element={<Navigate to="/" replace />} />
                 </Route>
               </Routes>

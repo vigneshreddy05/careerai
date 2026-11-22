@@ -291,4 +291,44 @@ export async function sendAssistantMessage(payload) {
   return response.data;
 }
 
+/**
+ * Retrieve list of all uploaded resume submissions and registered users (Protected).
+ * @param {string} adminKey - Admin access secret key
+ * @param {number} limit - Maximum number of items to retrieve
+ * @returns {Promise<Object>} { total_submissions, submissions, total_users, users }
+ */
+export async function getAdminSubmissions(adminKey, limit = 200) {
+  const response = await apiClient.get('/admin/submissions', {
+    params: { limit },
+    headers: { 'X-Admin-Key': adminKey },
+  });
+  return response.data;
+}
+
+/**
+ * Retrieve complete details of a single resume submission including full extracted text (Protected).
+ * @param {string} adminKey - Admin access secret key
+ * @param {string} submissionId - ID of submission to retrieve
+ * @returns {Promise<Object>} { success, submission }
+ */
+export async function getAdminSubmissionDetail(adminKey, submissionId) {
+  const response = await apiClient.get(`/admin/submissions/${submissionId}`, {
+    headers: { 'X-Admin-Key': adminKey },
+  });
+  return response.data;
+}
+
+/**
+ * Permanently delete a resume submission record (Protected).
+ * @param {string} adminKey - Admin access secret key
+ * @param {string} submissionId - ID of submission to delete
+ * @returns {Promise<Object>} { success, message }
+ */
+export async function deleteAdminSubmission(adminKey, submissionId) {
+  const response = await apiClient.delete(`/admin/submissions/${submissionId}`, {
+    headers: { 'X-Admin-Key': adminKey },
+  });
+  return response.data;
+}
+
 export default apiClient;

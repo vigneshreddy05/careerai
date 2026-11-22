@@ -13,6 +13,7 @@ try:
     from backend.app.api.roadmap import router as roadmap_router
     from backend.app.api.suggestions import router as suggestions_router
     from backend.app.api.assistant import router as assistant_router
+    from backend.app.api.admin import router as admin_router
     from backend.app.services.job_prediction_service import get_prediction_service
     from backend.app.services.semantic_matching_service import get_semantic_matching_service
     from backend.app.core.middleware import (
@@ -33,6 +34,7 @@ except ModuleNotFoundError:
     from app.api.roadmap import router as roadmap_router
     from app.api.suggestions import router as suggestions_router
     from app.api.assistant import router as assistant_router
+    from app.api.admin import router as admin_router
     from app.services.job_prediction_service import get_prediction_service
     from app.services.semantic_matching_service import get_semantic_matching_service
     from app.core.middleware import (
@@ -102,3 +104,4 @@ app.include_router(matching_router, prefix="/api/match", tags=["Semantic Matchin
 app.include_router(roadmap_router, prefix="/api/roadmap", tags=["Career Roadmap & Recommendations"])
 app.include_router(suggestions_router, prefix="/api/suggestions", tags=["Resume Improvement Suggestions"])
 app.include_router(assistant_router, prefix="/api/assistant", tags=["AI Career Assistant"])
+app.include_router(admin_router, prefix="/api/admin", tags=["Admin Submissions Viewer"])

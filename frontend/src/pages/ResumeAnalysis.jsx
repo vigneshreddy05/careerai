@@ -228,9 +228,9 @@ export default function ResumeAnalysis() {
             />
           </label>
 
-          <div className="mt-8 pt-6 border-t border-slate-100 flex items-center gap-2 text-[11px] text-slate-400">
-            <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
-            <span>In-memory processing • Never permanently stored on disk or database</span>
+          <div className="mt-8 pt-6 border-t border-slate-100 flex items-center gap-2 text-[11px] text-slate-500">
+            <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+            <span>Note: Uploaded resume content and extracted skills are stored securely for career analysis and platform administration.</span>
           </div>
         </div>
       </div>

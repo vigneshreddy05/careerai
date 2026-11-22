@@ -167,6 +167,28 @@ export default function Settings() {
         </ul>
       </div>
 
+      {/* Site Administration Portal Card */}
+      <div className="bg-slate-50 rounded-3xl border border-slate-200/80 p-6 sm:p-8 shadow-sm flex items-center justify-between">
+        <div className="flex items-center gap-3">
+          <div className="w-10 h-10 rounded-2xl bg-indigo-100/70 border border-indigo-200/60 flex items-center justify-center text-indigo-700">
+            <Lock className="w-5 h-5" />
+          </div>
+          <div>
+            <h4 className="text-sm font-bold text-slate-900">Site Owner Portal</h4>
+            <p className="text-xs text-slate-500 mt-0.5">
+              Access the protected submissions viewer and registered candidate directory.
+            </p>
+          </div>
+        </div>
+        <Link
+          to="/admin"
+          className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-white hover:bg-slate-100 text-slate-700 border border-slate-200 text-xs font-semibold shadow-xs transition-colors"
+        >
+          <span>Admin Portal</span>
+          <ExternalLink className="w-3.5 h-3.5" />
+        </Link>
+      </div>
+
       {/* Sign Out Card */}
       {isAuthenticated && (
         <div className="bg-white rounded-3xl border border-slate-200/80 p-6 sm:p-8 shadow-sm flex items-center justify-between">
