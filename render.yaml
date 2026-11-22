@@ -1,0 +1,26 @@
+# =====================================================================
+# CareerAI - Render Infrastructure Blueprint
+# Deploys on Render Free Web Service Tier (512 MB RAM, Zero Cost)
+# =====================================================================
+services:
+  - type: web
+    name: careerai-backend
+    runtime: python
+    rootDir: backend
+    plan: free
+    region: oregon
+    buildCommand: pip install -r requirements-render.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: LOW_MEMORY_MODE
+        value: "true"
+      - key: ENVIRONMENT
+        value: "production"
+      - key: JWT_SECRET_KEY
+        generateValue: true
+      - key: ADMIN_ACCESS_KEY
+        value: "careerai-admin-2026"
+      - key: CORS_ORIGINS
+        value: "*"
+      - key: PYTHON_VERSION
+        value: "3.11.9"

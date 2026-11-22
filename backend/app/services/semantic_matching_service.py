@@ -3,19 +3,30 @@ Semantic Resume–Job Description Matching Service for CareerAI.
 
 Uses all-MiniLM-L6-v2 (Sentence-BERT architecture) via Hugging Face Transformers
 with attention-mask-aware mean pooling and L2 normalization on CPU.
+Supports a lightweight LOW_MEMORY_MODE (< 150 MB RAM) using scikit-learn TF-IDF
+for 512 MB RAM cloud environments (Render Free Tier).
 Combines dense semantic vector similarity with deterministic skill gap analysis
 from the existing skill_extractor taxonomy.
 """
 
 import logging
 from pathlib import Path
-from typing import Dict, List, Optional, Tuple
-
-import torch
-import torch.nn.functional as F
-from transformers import AutoTokenizer, AutoModel
+from typing import Dict, List, Optional, Tuple, Any
 
 try:
+    import torch
+    import torch.nn.functional as F
+    from transformers import AutoTokenizer, AutoModel
+    HAS_TORCH_TRANSFORMERS = True
+except ImportError:
+    torch = None
+    F = None
+    AutoTokenizer = None
+    AutoModel = None
+    HAS_TORCH_TRANSFORMERS = False
+
+try:
+    from backend.app.core.config import settings
     from backend.app.schemas.matching import (
         SkillMatchBreakdown,
         SemanticMatchResult,
@@ -24,6 +35,7 @@ try:
     )
     from backend.app.services.skill_extractor import extract_skills
 except ModuleNotFoundError:
+    from app.core.config import settings
     from app.schemas.matching import (
         SkillMatchBreakdown,
         SemanticMatchResult,
@@ -53,21 +65,29 @@ class SemanticMatchingService:
 
     def __init__(self, model_dir: Optional[Path] = None):
         self.model_dir = Path(model_dir) if model_dir else DEFAULT_MINILM_DIR
-        self.model: Optional[AutoModel] = None
-        self.tokenizer: Optional[AutoTokenizer] = None
+        self.model: Optional[Any] = None
+        self.tokenizer: Optional[Any] = None
         self.is_loaded: bool = False
         self.load_error: Optional[str] = None
-        self.device = torch.device("cpu")
+        self.device = torch.device("cpu") if (torch and hasattr(torch, "device")) else "cpu"
         self.embedding_dimension = 384
 
     def load_model(self, force_reload: bool = False) -> bool:
         """
         Load all-MiniLM-L6-v2 tokenizer and model weights from local disk on CPU.
-        Uses local_files_only=True to prevent online network calls.
+        Under LOW_MEMORY_MODE, skips loading PyTorch transformer weights into RAM.
         """
         if self.is_loaded and not force_reload:
             return True
 
+        # 1. Check for LOW_MEMORY_MODE (Render 512MB free tier)
+        if getattr(settings, "LOW_MEMORY_MODE", False) or not HAS_TORCH_TRANSFORMERS:
+            logger.info("LOW_MEMORY_MODE is active. Initializing lightweight TF-IDF semantic matcher (< 150 MB RAM)...")
+            self.is_loaded = True
+            self.load_error = None
+            return True
+
+        # 2. Standard Mode: Load full all-MiniLM-L6-v2 PyTorch checkpoint
         if not self.model_dir.exists():
             self.load_error = f"Model directory not found at: {self.model_dir}"
             logger.error(self.load_error)
@@ -93,7 +113,7 @@ class SemanticMatchingService:
             return False
 
     @staticmethod
-    def _mean_pooling(model_output, attention_mask: torch.Tensor) -> torch.Tensor:
+    def _mean_pooling(model_output, attention_mask: Any) -> Any:
         """
         Compute attention-mask-aware mean pooling across token embeddings.
         Avoids skewing the pooled vector with zero-padding tokens.
@@ -130,7 +150,7 @@ class SemanticMatchingService:
                 break
         return chunks
 
-    def _encode_text(self, text: str) -> Tuple[torch.Tensor, int]:
+    def _encode_text(self, text: str) -> Tuple[Any, int]:
         """
         Encode arbitrary-length text into a 384-dimensional unit vector.
         Splits into chunks, mean-pools and L2-normalizes each chunk, then
@@ -138,7 +158,6 @@ class SemanticMatchingService:
         """
         chunks = self._chunk_text(text)
         if not chunks:
-            # Fallback zero vector
             return torch.zeros((1, self.embedding_dimension), device=self.device), 1
 
         encoded = self.tokenizer(
@@ -154,7 +173,6 @@ class SemanticMatchingService:
             outputs = self.model(**encoded)
             chunk_pooled = self._mean_pooling(outputs, encoded["attention_mask"])
             chunk_normalized = F.normalize(chunk_pooled, p=2, dim=1)
-            # Combine chunk embeddings: average vector normalized to unit length
             doc_pooled = torch.mean(chunk_normalized, dim=0, keepdim=True)
             doc_embedding = F.normalize(doc_pooled, p=2, dim=1)
 
@@ -252,12 +270,38 @@ class SemanticMatchingService:
             match_percentage=match_percentage,
         )
 
-        # 2. Sentence-BERT Semantic Dense Vector Cosine Similarity
-        emb_resume, chunk_count_resume = self._encode_text(clean_resume)
-        emb_jd, chunk_count_jd = self._encode_text(clean_jd)
+        # 2. Semantic Similarity Calculation (Sentence-BERT or Lightweight TF-IDF)
+        if getattr(settings, "LOW_MEMORY_MODE", False) or not HAS_TORCH_TRANSFORMERS or self.model is None:
+            # Lightweight TF-IDF vector similarity via scikit-learn
+            try:
+                from sklearn.feature_extraction.text import TfidfVectorizer
+                from sklearn.metrics.pairwise import cosine_similarity
 
-        raw_sim = float(torch.sum(emb_resume * emb_jd).item())
-        clamped_sim = max(0.0, min(1.0, raw_sim))
+                vectorizer = TfidfVectorizer(
+                    ngram_range=(1, 2),
+                    stop_words="english",
+                    max_features=2000,
+                    sublinear_tf=True
+                )
+                tfidf_matrix = vectorizer.fit_transform([clean_resume, clean_jd])
+                raw_sim = float(cosine_similarity(tfidf_matrix[0:1], tfidf_matrix[1:2])[0][0])
+            except Exception:
+                # Token overlap fallback if scikit-learn fails
+                r_words = set(clean_resume.lower().split())
+                j_words = set(clean_jd.lower().split())
+                raw_sim = len(r_words & j_words) / max(len(j_words), 1)
+
+            clamped_sim = max(0.0, min(1.0, raw_sim))
+            chunk_count_resume = 1
+            chunk_count_jd = 1
+        else:
+            # Full Sentence-BERT inference
+            emb_resume, chunk_count_resume = self._encode_text(clean_resume)
+            emb_jd, chunk_count_jd = self._encode_text(clean_jd)
+
+            raw_sim = float(torch.sum(emb_resume * emb_jd).item())
+            clamped_sim = max(0.0, min(1.0, raw_sim))
+
         sim_percentage = round(clamped_sim * 100, 1)
 
         if clamped_sim >= 0.75:

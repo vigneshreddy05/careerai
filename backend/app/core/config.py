@@ -34,6 +34,9 @@ class Settings(BaseSettings):
     DATABASE_NAME: str = "ai_job_prediction"
     SQLITE_DB_PATH: str = "backend/data/careerai.db"
 
+    # Memory & Deployment Profile (Set LOW_MEMORY_MODE=true for 512MB RAM hosts e.g. Render Free Tier)
+    LOW_MEMORY_MODE: bool = False
+
     # Local LLM Configuration (Ollama)
     OLLAMA_BASE_URL: str = "http://127.0.0.1:11434"
     OLLAMA_MODEL: str = "qwen2.5:3b"
