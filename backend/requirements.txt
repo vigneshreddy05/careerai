@@ -1,0 +1,38 @@
+# =====================================================================
+# AI Job Prediction System - Core Backend Dependencies
+# Target Environment: Python 3.11+ / CPU Inference
+# =====================================================================
+
+# --- API Framework & ASGI Server ---
+fastapi>=0.115.0,<1.0.0
+uvicorn[standard]>=0.34.0,<1.0.0
+python-multipart>=0.0.20
+
+# --- Data Validation & Environment Configuration ---
+pydantic>=2.10.0,<3.0.0
+pydantic-settings>=2.7.0,<3.0.0
+python-dotenv>=1.0.1,<2.0.0
+
+# --- Database & Cloud Storage (MongoDB Atlas with SQLite fallback) ---
+pymongo>=4.10.0,<5.0.0
+dnspython>=2.7.0,<3.0.0
+
+# --- Authentication, Security & Password Hashing ---
+pyjwt>=2.9.0,<3.0.0
+bcrypt>=4.2.0,<5.0.0
+
+# --- Resume Document Processing (PDF & DOCX) ---
+pymupdf>=1.25.0,<2.0.0
+python-docx>=1.1.2,<2.0.0
+
+# --- Machine Learning & CPU Inference (DistilBERT & Sentence-BERT) ---
+torch>=2.0.0,<3.0.0
+transformers>=4.40.0,<6.0.0
+safetensors>=0.4.0,<1.0.0
+
+# --- Local LLM Communication (Ollama HTTP Client) ---
+httpx>=0.28.0,<1.0.0
+
+# --- Testing & Quality Assurance ---
+pytest>=8.3.0,<10.0.0
+pytest-asyncio>=0.25.0,<2.0.0

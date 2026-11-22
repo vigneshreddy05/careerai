@@ -1,0 +1,9 @@
+{
+  "test_sample_count": 251,
+  "accuracy": 0.8287,
+  "macro_f1": 0.7696,
+  "weighted_f1": 0.8148,
+  "macro_precision": 0.8034,
+  "macro_recall": 0.7763,
+  "test_loss": 1.3352
+}

@@ -1,0 +1,44 @@
+{
+  "benchmark_status": "SUCCESS",
+  "timestamp": "2026-11-21T18:48:25",
+  "hardware": {
+    "processor": "Intel Core i7-1355U (12 logical cores)",
+    "device": "cpu",
+    "threads_used": 8,
+    "cuda_available": false,
+    "system_ram_gb": 15.72
+  },
+  "model_configuration": {
+    "model_name": "distilbert-base-uncased",
+    "parameters": 66971928,
+    "trainable_parameters": 66971928,
+    "num_classes": 24,
+    "sequence_length": 256,
+    "batch_size": 16,
+    "learning_rate": 2e-05,
+    "epochs_run": 1,
+    "total_steps": 124
+  },
+  "dataset_split": {
+    "total_unique_resumes": 2481,
+    "train_samples": 1979,
+    "val_samples": 251,
+    "test_samples": 251,
+    "cluster_leakage_check": "VERIFIED_ZERO_LEAKAGE"
+  },
+  "empirical_measurements": {
+    "elapsed_training_seconds": 1125.73,
+    "elapsed_training_minutes": 18.76,
+    "samples_per_second": 1.76,
+    "steps_per_second": 0.11,
+    "average_step_time_seconds": 9.078,
+    "initial_process_rss_mb": 1038.11,
+    "peak_process_rss_mb": 2052.2,
+    "peak_process_rss_gb": 2.0,
+    "final_process_rss_mb": 1290.21,
+    "average_cpu_percent": 78.2,
+    "initial_loss": 3.1719,
+    "final_loss": 2.1078
+  },
+  "saved_checkpoint_path": "C:\\Users\\boyap\\Desktop\\AI Job Prediction System\\backend\\ml\\saved_models\\benchmark_checkpoint"
+}

@@ -1,0 +1,1677 @@
+{
+  "timestamp": "2026-11-21T18:02:40.763693",
+  "summary": {
+    "total_records": 3446,
+    "opensporks_count": 2484,
+    "gaurav_dutta_count": 962,
+    "total_empty": 1,
+    "opensporks_empty": 1,
+    "gaurav_dutta_empty": 0,
+    "short_records_count": 30,
+    "opensporks_short": 0,
+    "gaurav_dutta_short": 30
+  },
+  "exact_duplicates": {
+    "total_records": 3446,
+    "unique_texts": 2648,
+    "duplicate_groups_count": 164,
+    "total_duplicate_rows": 962,
+    "redundant_rows": 798,
+    "cross_dataset_groups": 0,
+    "group_size_distribution": {
+      "2": 19,
+      "3": 11,
+      "4": 38,
+      "5": 11,
+      "6": 34,
+      "8": 29,
+      "9": 3,
+      "10": 14,
+      "12": 1,
+      "17": 3,
+      "18": 1
+    },
+    "duplicate_samples": [
+      {
+        "hash": "5cab02555e6a",
+        "count": 2,
+        "categories": [
+          "FINANCE",
+          "FINANCE"
+        ],
+        "datasets": [
+          "opensporks",
+          "opensporks"
+        ],
+        "sample_id": "opensporks_19147603"
+      },
+      {
+        "hash": "3df83b3566ad",
+        "count": 2,
+        "categories": [
+          "AVIATION",
+          "AVIATION"
+        ],
+        "datasets": [
+          "opensporks",
+          "opensporks"
+        ],
+        "sample_id": "opensporks_16850314"
+      },
+      {
+        "hash": "4866e6f38ccf",
+        "count": 4,
+        "categories": [
+          "Data Science",
+          "Data Science",
+          "Data Science",
+          "Data Science"
+        ],
+        "datasets": [
+          "gaurav_dutta",
+          "gaurav_dutta",
+          "gaurav_dutta",
+          "gaurav_dutta"
+        ],
+        "sample_id": "gaurav_dutta_0"
+      },
+      {
+        "hash": "a32f2f9824dc",
+        "count": 4,
+        "categories": [
+          "Data Science",
+          "Data Science",
+          "Data Science",
+          "Data Science"
+        ],
+        "datasets": [
+          "gaurav_dutta",
+          "gaurav_dutta",
+          "gaurav_dutta",
+          "gaurav_dutta"
+        ],
+        "sample_id": "gaurav_dutta_1"
+      },
+      {
+        "hash": "89e131ad82b2",
+        "count": 4,
+        "categories": [
+          "Data Science",
+          "Data Science",
+          "Data Science",
+          "Data Science"
+        ],
+        "datasets": [
+          "gaurav_dutta",
+          "gaurav_dutta",
+          "gaurav_dutta",
+          "gaurav_dutta"
+        ],
+        "sample_id": "gaurav_dutta_2"
+      }
+    ]
+  },
+  "exact_duplicates_by_dataset": {
+    "opensporks": {
+      "total_records": 2484,
+      "unique_texts": 2482,
+      "duplicate_groups_count": 2,
+      "total_duplicate_rows": 4,
+      "redundant_rows": 2,
+      "cross_dataset_groups": 0,
+      "group_size_distribution": {
+        "2": 2
+      },
+      "duplicate_samples": [
+        {
+          "hash": "5cab02555e6a",
+          "count": 2,
+          "categories": [
+            "FINANCE",
+            "FINANCE"
+          ],
+          "datasets": [
+            "opensporks",
+            "opensporks"
+          ],
+          "sample_id": "opensporks_19147603"
+        },
+        {
+          "hash": "3df83b3566ad",
+          "count": 2,
+          "categories": [
+            "AVIATION",
+            "AVIATION"
+          ],
+          "datasets": [
+            "opensporks",
+            "opensporks"
+          ],
+          "sample_id": "opensporks_16850314"
+        }
+      ]
+    },
+    "gaurav_dutta": {
+      "total_records": 962,
+      "unique_texts": 166,
+      "duplicate_groups_count": 162,
+      "total_duplicate_rows": 958,
+      "redundant_rows": 796,
+      "cross_dataset_groups": 0,
+      "group_size_distribution": {
+        "2": 17,
+        "3": 11,
+        "4": 38,
+        "5": 11,
+        "6": 34,
+        "8": 29,
+        "9": 3,
+        "10": 14,
+        "12": 1,
+        "17": 3,
+        "18": 1
+      },
+      "duplicate_samples": [
+        {
+          "hash": "4866e6f38ccf",
+          "count": 4,
+          "categories": [
+            "Data Science",
+            "Data Science",
+            "Data Science",
+            "Data Science"
+          ],
+          "datasets": [
+            "gaurav_dutta",
+            "gaurav_dutta",
+            "gaurav_dutta",
+            "gaurav_dutta"
+          ],
+          "sample_id": "gaurav_dutta_0"
+        },
+        {
+          "hash": "a32f2f9824dc",
+          "count": 4,
+          "categories": [
+            "Data Science",
+            "Data Science",
+            "Data Science",
+            "Data Science"
+          ],
+          "datasets": [
+            "gaurav_dutta",
+            "gaurav_dutta",
+            "gaurav_dutta",
+            "gaurav_dutta"
+          ],
+          "sample_id": "gaurav_dutta_1"
+        },
+        {
+          "hash": "89e131ad82b2",
+          "count": 4,
+          "categories": [
+            "Data Science",
+            "Data Science",
+            "Data Science",
+            "Data Science"
+          ],
+          "datasets": [
+            "gaurav_dutta",
+            "gaurav_dutta",
+            "gaurav_dutta",
+            "gaurav_dutta"
+          ],
+          "sample_id": "gaurav_dutta_2"
+        },
+        {
+          "hash": "bb6b50c6417d",
+          "count": 4,
+          "categories": [
+            "Data Science",
+            "Data Science",
+            "Data Science",
+            "Data Science"
+          ],
+          "datasets": [
+            "gaurav_dutta",
+            "gaurav_dutta",
+            "gaurav_dutta",
+            "gaurav_dutta"
+          ],
+          "sample_id": "gaurav_dutta_3"
+        },
+        {
+          "hash": "02ff91942131",
+          "count": 4,
+          "categories": [
+            "Data Science",
+            "Data Science",
+            "Data Science",
+            "Data Science"
+          ],
+          "datasets": [
+            "gaurav_dutta",
+            "gaurav_dutta",
+            "gaurav_dutta",
+            "gaurav_dutta"
+          ],
+          "sample_id": "gaurav_dutta_4"
+        }
+      ]
+    }
+  },
+  "near_duplicates": {
+    "num_hashes": 32,
+    "lsh_bands": 8,
+    "rows_per_band": 4,
+    "candidate_pairs_evaluated": 5459,
+    "pairs_above_threshold": 3090,
+    "threshold": 0.8,
+    "similarity_breakdown": {
+      ">=0.95": 3081,
+      "0.90-0.95": 4,
+      "0.80-0.90": 5,
+      "0.70-0.80": 6
+    },
+    "sample_near_duplicates": [
+      {
+        "id_1": "gaurav_dutta_41",
+        "dataset_1": "gaurav_dutta",
+        "category_1": "HR",
+        "id_2": "gaurav_dutta_74",
+        "dataset_2": "gaurav_dutta",
+        "category_2": "HR",
+        "jaccard_similarity": 1.0
+      },
+      {
+        "id_1": "gaurav_dutta_620",
+        "dataset_1": "gaurav_dutta",
+        "category_1": "DevOps Engineer",
+        "id_2": "gaurav_dutta_653",
+        "dataset_2": "gaurav_dutta",
+        "category_2": "DevOps Engineer",
+        "jaccard_similarity": 1.0
+      },
+      {
+        "id_1": "gaurav_dutta_252",
+        "dataset_1": "gaurav_dutta",
+        "category_1": "Sales",
+        "id_2": "gaurav_dutta_257",
+        "dataset_2": "gaurav_dutta",
+        "category_2": "Sales",
+        "jaccard_similarity": 1.0
+      },
+      {
+        "id_1": "gaurav_dutta_532",
+        "dataset_1": "gaurav_dutta",
+        "category_1": "Operations Manager",
+        "id_2": "gaurav_dutta_540",
+        "dataset_2": "gaurav_dutta",
+        "category_2": "Operations Manager",
+        "jaccard_similarity": 1.0
+      },
+      {
+        "id_1": "gaurav_dutta_857",
+        "dataset_1": "gaurav_dutta",
+        "category_1": "Blockchain",
+        "id_2": "gaurav_dutta_862",
+        "dataset_2": "gaurav_dutta",
+        "category_2": "Blockchain",
+        "jaccard_similarity": 1.0
+      },
+      {
+        "id_1": "gaurav_dutta_894",
+        "dataset_1": "gaurav_dutta",
+        "category_1": "Testing",
+        "id_2": "gaurav_dutta_929",
+        "dataset_2": "gaurav_dutta",
+        "category_2": "Testing",
+        "jaccard_similarity": 1.0
+      },
+      {
+        "id_1": "gaurav_dutta_147",
+        "dataset_1": "gaurav_dutta",
+        "category_1": "Web Designing",
+        "id_2": "gaurav_dutta_177",
+        "dataset_2": "gaurav_dutta",
+        "category_2": "Web Designing",
+        "jaccard_similarity": 1.0
+      },
+      {
+        "id_1": "gaurav_dutta_806",
+        "dataset_1": "gaurav_dutta",
+        "category_1": "ETL Developer",
+        "id_2": "gaurav_dutta_816",
+        "dataset_2": "gaurav_dutta",
+        "category_2": "ETL Developer",
+        "jaccard_similarity": 1.0
+      }
+    ]
+  },
+  "cluster_audit": {
+    "total_clusters": 2636,
+    "singleton_clusters": 2461,
+    "multi_member_clusters": 175,
+    "cluster_size_distribution": {
+      "1": 2461,
+      "2": 29,
+      "3": 12,
+      "4": 38,
+      "5": 11,
+      "6": 34,
+      "8": 29,
+      "9": 3,
+      "10": 14,
+      "12": 1,
+      "17": 3,
+      "18": 1
+    },
+    "largest_cluster_size": 18,
+    "leakage_protection_note": "Cluster IDs ensure identical and near-identical resumes stay in the same split (train/val/test) to prevent data leakage."
+  },
+  "word_count_audit": {
+    "opensporks": {
+      "total_records": 2484,
+      "empty_count": 1,
+      "empty_records": [
+        {
+          "id": "opensporks_12632728",
+          "dataset": "opensporks",
+          "category": "BUSINESS-DEVELOPMENT",
+          "word_count": 0
+        }
+      ],
+      "short_count": 0,
+      "short_threshold": 50,
+      "short_records_sample": [],
+      "short_records_by_category": {},
+      "word_count_stats": {
+        "min": 0,
+        "max": 5175,
+        "mean": 817.02,
+        "median": 761,
+        "p25": 655,
+        "p75": 940
+      }
+    },
+    "gaurav_dutta": {
+      "total_records": 962,
+      "empty_count": 0,
+      "empty_records": [],
+      "short_count": 30,
+      "short_threshold": 50,
+      "short_records_sample": [
+        {
+          "id": "gaurav_dutta_42",
+          "dataset": "gaurav_dutta",
+          "category": "HR",
+          "word_count": 21,
+          "preview": "Education Details \n BA   mumbai University\nHR \n\n\nSkill Details \nHr Operations- Exprience - Less than 1 year monthsCompan"
+        },
+        {
+          "id": "gaurav_dutta_43",
+          "dataset": "gaurav_dutta",
+          "category": "HR",
+          "word_count": 25,
+          "preview": "Education Details \nJune 2012 to May 2015 B.A Economics Chennai, Tamil Nadu Sdnbvc\nHr \n\n\nSkill Details \nCompany Details \n"
+        },
+        {
+          "id": "gaurav_dutta_44",
+          "dataset": "gaurav_dutta",
+          "category": "HR",
+          "word_count": 25,
+          "preview": "Education Details \nJune 2012 to May 2015 B.A Economics Chennai, Tamil Nadu Sdnbvc\nHr \n\n\nSkill Details \nCompany Details \n"
+        },
+        {
+          "id": "gaurav_dutta_45",
+          "dataset": "gaurav_dutta",
+          "category": "HR",
+          "word_count": 16,
+          "preview": "Education Details \n BBA   lovely professional university\nHR \n\n\nSkill Details \nCommunication- Exprience - 6 monthsCompany"
+        },
+        {
+          "id": "gaurav_dutta_46",
+          "dataset": "gaurav_dutta",
+          "category": "HR",
+          "word_count": 17,
+          "preview": "Education Details \n MBA   ACN College of engineering & mgt\nHR \n\n\nSkill Details \nCompany Details \ncompany - HR Assistant\n"
+        },
+        {
+          "id": "gaurav_dutta_53",
+          "dataset": "gaurav_dutta",
+          "category": "HR",
+          "word_count": 21,
+          "preview": "Education Details \n BA   mumbai University\nHR \n\n\nSkill Details \nHr Operations- Exprience - Less than 1 year monthsCompan"
+        },
+        {
+          "id": "gaurav_dutta_54",
+          "dataset": "gaurav_dutta",
+          "category": "HR",
+          "word_count": 25,
+          "preview": "Education Details \nJune 2012 to May 2015 B.A Economics Chennai, Tamil Nadu Sdnbvc\nHr \n\n\nSkill Details \nCompany Details \n"
+        },
+        {
+          "id": "gaurav_dutta_55",
+          "dataset": "gaurav_dutta",
+          "category": "HR",
+          "word_count": 25,
+          "preview": "Education Details \nJune 2012 to May 2015 B.A Economics Chennai, Tamil Nadu Sdnbvc\nHr \n\n\nSkill Details \nCompany Details \n"
+        },
+        {
+          "id": "gaurav_dutta_56",
+          "dataset": "gaurav_dutta",
+          "category": "HR",
+          "word_count": 16,
+          "preview": "Education Details \n BBA   lovely professional university\nHR \n\n\nSkill Details \nCommunication- Exprience - 6 monthsCompany"
+        },
+        {
+          "id": "gaurav_dutta_57",
+          "dataset": "gaurav_dutta",
+          "category": "HR",
+          "word_count": 17,
+          "preview": "Education Details \n MBA   ACN College of engineering & mgt\nHR \n\n\nSkill Details \nCompany Details \ncompany - HR Assistant\n"
+        }
+      ],
+      "short_records_by_category": {
+        "HR": 20,
+        "Advocate": 4,
+        "Java Developer": 6
+      },
+      "word_count_stats": {
+        "min": 16,
+        "max": 2150,
+        "mean": 445.22,
+        "median": 320,
+        "p25": 159,
+        "p75": 590
+      }
+    },
+    "combined": {
+      "total_records": 3446,
+      "empty_count": 1,
+      "empty_records": [
+        {
+          "id": "opensporks_12632728",
+          "dataset": "opensporks",
+          "category": "BUSINESS-DEVELOPMENT",
+          "word_count": 0
+        }
+      ],
+      "short_count": 30,
+      "short_threshold": 50,
+      "short_records_sample": [
+        {
+          "id": "gaurav_dutta_42",
+          "dataset": "gaurav_dutta",
+          "category": "HR",
+          "word_count": 21,
+          "preview": "Education Details \n BA   mumbai University\nHR \n\n\nSkill Details \nHr Operations- Exprience - Less than 1 year monthsCompan"
+        },
+        {
+          "id": "gaurav_dutta_43",
+          "dataset": "gaurav_dutta",
+          "category": "HR",
+          "word_count": 25,
+          "preview": "Education Details \nJune 2012 to May 2015 B.A Economics Chennai, Tamil Nadu Sdnbvc\nHr \n\n\nSkill Details \nCompany Details \n"
+        },
+        {
+          "id": "gaurav_dutta_44",
+          "dataset": "gaurav_dutta",
+          "category": "HR",
+          "word_count": 25,
+          "preview": "Education Details \nJune 2012 to May 2015 B.A Economics Chennai, Tamil Nadu Sdnbvc\nHr \n\n\nSkill Details \nCompany Details \n"
+        },
+        {
+          "id": "gaurav_dutta_45",
+          "dataset": "gaurav_dutta",
+          "category": "HR",
+          "word_count": 16,
+          "preview": "Education Details \n BBA   lovely professional university\nHR \n\n\nSkill Details \nCommunication- Exprience - 6 monthsCompany"
+        },
+        {
+          "id": "gaurav_dutta_46",
+          "dataset": "gaurav_dutta",
+          "category": "HR",
+          "word_count": 17,
+          "preview": "Education Details \n MBA   ACN College of engineering & mgt\nHR \n\n\nSkill Details \nCompany Details \ncompany - HR Assistant\n"
+        },
+        {
+          "id": "gaurav_dutta_53",
+          "dataset": "gaurav_dutta",
+          "category": "HR",
+          "word_count": 21,
+          "preview": "Education Details \n BA   mumbai University\nHR \n\n\nSkill Details \nHr Operations- Exprience - Less than 1 year monthsCompan"
+        },
+        {
+          "id": "gaurav_dutta_54",
+          "dataset": "gaurav_dutta",
+          "category": "HR",
+          "word_count": 25,
+          "preview": "Education Details \nJune 2012 to May 2015 B.A Economics Chennai, Tamil Nadu Sdnbvc\nHr \n\n\nSkill Details \nCompany Details \n"
+        },
+        {
+          "id": "gaurav_dutta_55",
+          "dataset": "gaurav_dutta",
+          "category": "HR",
+          "word_count": 25,
+          "preview": "Education Details \nJune 2012 to May 2015 B.A Economics Chennai, Tamil Nadu Sdnbvc\nHr \n\n\nSkill Details \nCompany Details \n"
+        },
+        {
+          "id": "gaurav_dutta_56",
+          "dataset": "gaurav_dutta",
+          "category": "HR",
+          "word_count": 16,
+          "preview": "Education Details \n BBA   lovely professional university\nHR \n\n\nSkill Details \nCommunication- Exprience - 6 monthsCompany"
+        },
+        {
+          "id": "gaurav_dutta_57",
+          "dataset": "gaurav_dutta",
+          "category": "HR",
+          "word_count": 17,
+          "preview": "Education Details \n MBA   ACN College of engineering & mgt\nHR \n\n\nSkill Details \nCompany Details \ncompany - HR Assistant\n"
+        }
+      ],
+      "short_records_by_category": {
+        "HR": 20,
+        "Advocate": 4,
+        "Java Developer": 6
+      },
+      "word_count_stats": {
+        "min": 0,
+        "max": 5175,
+        "mean": 713.23,
+        "median": 709,
+        "p25": 424,
+        "p75": 894
+      }
+    }
+  },
+  "non_ascii_audit": {
+    "records_with_non_ascii": 2666,
+    "percentage": 77.37,
+    "unique_non_ascii_chars": 89,
+    "top_non_ascii_chars": [
+      {
+        "char": "â",
+        "code": "U+00E2",
+        "count": 15056,
+        "repr": "'â'"
+      },
+      {
+        "char": "¢",
+        "code": "U+00A2",
+        "count": 13166,
+        "repr": "'¢'"
+      },
+      {
+        "char": "",
+        "code": "U+0080",
+        "count": 12527,
+        "repr": "'\\x80'"
+      },
+      {
+        "char": " ",
+        "code": "U+00A0",
+        "count": 10121,
+        "repr": "'\\xa0'"
+      },
+      {
+        "char": "－",
+        "code": "U+FF0D",
+        "count": 6890,
+        "repr": "'－'"
+      },
+      {
+        "char": "–",
+        "code": "U+2013",
+        "count": 1506,
+        "repr": "'–'"
+      },
+      {
+        "char": "Â",
+        "code": "U+00C2",
+        "count": 1342,
+        "repr": "'Â'"
+      },
+      {
+        "char": "•",
+        "code": "U+2022",
+        "count": 966,
+        "repr": "'•'"
+      },
+      {
+        "char": "",
+        "code": "U+009E",
+        "count": 932,
+        "repr": "'\\x9e'"
+      },
+      {
+        "char": "Ã",
+        "code": "U+00C3",
+        "count": 782,
+        "repr": "'Ã'"
+      },
+      {
+        "char": "·",
+        "code": "U+00B7",
+        "count": 767,
+        "repr": "'·'"
+      },
+      {
+        "char": "",
+        "code": "U+0098",
+        "count": 603,
+        "repr": "'\\x98'"
+      },
+      {
+        "char": "",
+        "code": "U+009C",
+        "count": 490,
+        "repr": "'\\x9c'"
+      },
+      {
+        "char": "",
+        "code": "U+0096",
+        "count": 468,
+        "repr": "'\\x96'"
+      },
+      {
+        "char": "",
+        "code": "U+0097",
+        "count": 412,
+        "repr": "'\\x97'"
+      }
+    ],
+    "preservation_status": "Preserved without stripping or replacement"
+  },
+  "pii_audit": {
+    "total_records": 3446,
+    "records_with_pii": 227,
+    "pii_percentage": 6.59,
+    "emails_detected": 40,
+    "unique_emails": 35,
+    "phones_detected": 234,
+    "unique_phones": 203,
+    "urls_detected": 346,
+    "unique_urls": 183,
+    "sanitization_action": "Masked emails to [EMAIL], phones to [PHONE], and URLs to [URL] in sanitized working copy"
+  },
+  "target_leakage": {
+    "total_records_checked": 3446,
+    "records_with_target_leakage": 3168,
+    "leakage_rate_percent": 91.93,
+    "by_category": {
+      "HR": {
+        "total": 154,
+        "leaked_records": 154,
+        "leakage_rate_percent": 100.0
+      },
+      "INFORMATION-TECHNOLOGY": {
+        "total": 120,
+        "leaked_records": 116,
+        "leakage_rate_percent": 96.7
+      },
+      "BUSINESS-DEVELOPMENT": {
+        "total": 120,
+        "leaked_records": 118,
+        "leakage_rate_percent": 98.3
+      },
+      "ADVOCATE": {
+        "total": 118,
+        "leaked_records": 96,
+        "leakage_rate_percent": 81.4
+      },
+      "CHEF": {
+        "total": 118,
+        "leaked_records": 109,
+        "leakage_rate_percent": 92.4
+      },
+      "FINANCE": {
+        "total": 118,
+        "leaked_records": 118,
+        "leakage_rate_percent": 100.0
+      },
+      "ENGINEERING": {
+        "total": 118,
+        "leaked_records": 118,
+        "leakage_rate_percent": 100.0
+      },
+      "ACCOUNTANT": {
+        "total": 118,
+        "leaked_records": 118,
+        "leakage_rate_percent": 100.0
+      },
+      "FITNESS": {
+        "total": 117,
+        "leaked_records": 104,
+        "leakage_rate_percent": 88.9
+      },
+      "AVIATION": {
+        "total": 117,
+        "leaked_records": 107,
+        "leakage_rate_percent": 91.5
+      },
+      "SALES": {
+        "total": 116,
+        "leaked_records": 116,
+        "leakage_rate_percent": 100.0
+      },
+      "HEALTHCARE": {
+        "total": 115,
+        "leaked_records": 115,
+        "leakage_rate_percent": 100.0
+      },
+      "CONSULTANT": {
+        "total": 115,
+        "leaked_records": 115,
+        "leakage_rate_percent": 100.0
+      },
+      "BANKING": {
+        "total": 115,
+        "leaked_records": 103,
+        "leakage_rate_percent": 89.6
+      },
+      "CONSTRUCTION": {
+        "total": 112,
+        "leaked_records": 112,
+        "leakage_rate_percent": 100.0
+      },
+      "PUBLIC-RELATIONS": {
+        "total": 111,
+        "leaked_records": 109,
+        "leakage_rate_percent": 98.2
+      },
+      "DESIGNER": {
+        "total": 107,
+        "leaked_records": 107,
+        "leakage_rate_percent": 100.0
+      },
+      "ARTS": {
+        "total": 103,
+        "leaked_records": 88,
+        "leakage_rate_percent": 85.4
+      },
+      "TEACHER": {
+        "total": 102,
+        "leaked_records": 102,
+        "leakage_rate_percent": 100.0
+      },
+      "APPAREL": {
+        "total": 97,
+        "leaked_records": 68,
+        "leakage_rate_percent": 70.1
+      },
+      "DIGITAL-MEDIA": {
+        "total": 96,
+        "leaked_records": 75,
+        "leakage_rate_percent": 78.1
+      },
+      "Java Developer": {
+        "total": 84,
+        "leaked_records": 84,
+        "leakage_rate_percent": 100.0
+      },
+      "Testing": {
+        "total": 70,
+        "leaked_records": 20,
+        "leakage_rate_percent": 28.6
+      },
+      "AGRICULTURE": {
+        "total": 63,
+        "leaked_records": 30,
+        "leakage_rate_percent": 47.6
+      },
+      "DevOps Engineer": {
+        "total": 55,
+        "leaked_records": 55,
+        "leakage_rate_percent": 100.0
+      },
+      "Python Developer": {
+        "total": 48,
+        "leaked_records": 48,
+        "leakage_rate_percent": 100.0
+      },
+      "Web Designing": {
+        "total": 45,
+        "leaked_records": 45,
+        "leakage_rate_percent": 100.0
+      },
+      "Hadoop": {
+        "total": 42,
+        "leaked_records": 42,
+        "leakage_rate_percent": 100.0
+      },
+      "Data Science": {
+        "total": 40,
+        "leaked_records": 40,
+        "leakage_rate_percent": 100.0
+      },
+      "Mechanical Engineer": {
+        "total": 40,
+        "leaked_records": 40,
+        "leakage_rate_percent": 100.0
+      },
+      "Sales": {
+        "total": 40,
+        "leaked_records": 40,
+        "leakage_rate_percent": 100.0
+      },
+      "Operations Manager": {
+        "total": 40,
+        "leaked_records": 40,
+        "leakage_rate_percent": 100.0
+      },
+      "ETL Developer": {
+        "total": 40,
+        "leaked_records": 40,
+        "leakage_rate_percent": 100.0
+      },
+      "Blockchain": {
+        "total": 40,
+        "leaked_records": 40,
+        "leakage_rate_percent": 100.0
+      },
+      "AUTOMOBILE": {
+        "total": 36,
+        "leaked_records": 20,
+        "leakage_rate_percent": 55.6
+      },
+      "Arts": {
+        "total": 36,
+        "leaked_records": 36,
+        "leakage_rate_percent": 100.0
+      },
+      "Database": {
+        "total": 33,
+        "leaked_records": 33,
+        "leakage_rate_percent": 100.0
+      },
+      "Health and fitness": {
+        "total": 30,
+        "leaked_records": 30,
+        "leakage_rate_percent": 100.0
+      },
+      "Electrical Engineering": {
+        "total": 30,
+        "leaked_records": 30,
+        "leakage_rate_percent": 100.0
+      },
+      "PMO": {
+        "total": 30,
+        "leaked_records": 30,
+        "leakage_rate_percent": 100.0
+      },
+      "Business Analyst": {
+        "total": 28,
+        "leaked_records": 28,
+        "leakage_rate_percent": 100.0
+      },
+      "DotNet Developer": {
+        "total": 28,
+        "leaked_records": 20,
+        "leakage_rate_percent": 71.4
+      },
+      "Automation Testing": {
+        "total": 26,
+        "leaked_records": 24,
+        "leakage_rate_percent": 92.3
+      },
+      "Network Security Engineer": {
+        "total": 25,
+        "leaked_records": 20,
+        "leakage_rate_percent": 80.0
+      },
+      "Civil Engineer": {
+        "total": 24,
+        "leaked_records": 24,
+        "leakage_rate_percent": 100.0
+      },
+      "SAP Developer": {
+        "total": 24,
+        "leaked_records": 8,
+        "leakage_rate_percent": 33.3
+      },
+      "BPO": {
+        "total": 22,
+        "leaked_records": 13,
+        "leakage_rate_percent": 59.1
+      },
+      "Advocate": {
+        "total": 20,
+        "leaked_records": 20,
+        "leakage_rate_percent": 100.0
+      }
+    },
+    "risk_assessment": "High (91.93% of resumes contain explicit category keywords). If trained unmasked, a DistilBERT classifier risks over-relying on superficial header keywords rather than holistic skills, experience, and responsibilities. Recommendation: In Phase 7, implement category phrase masking and compare baseline vs masked model metrics."
+  },
+  "class_distribution": {
+    "opensporks": {
+      "num_classes": 24,
+      "total_records": 2484,
+      "entropy": 3.1381,
+      "normalized_entropy": 0.9874,
+      "imbalance_ratio": 5.45,
+      "distribution_table": [
+        {
+          "category": "INFORMATION-TECHNOLOGY",
+          "count": 120,
+          "percentage": 4.83,
+          "balanced_weight": 0.8625
+        },
+        {
+          "category": "BUSINESS-DEVELOPMENT",
+          "count": 120,
+          "percentage": 4.83,
+          "balanced_weight": 0.8625
+        },
+        {
+          "category": "ADVOCATE",
+          "count": 118,
+          "percentage": 4.75,
+          "balanced_weight": 0.8771
+        },
+        {
+          "category": "CHEF",
+          "count": 118,
+          "percentage": 4.75,
+          "balanced_weight": 0.8771
+        },
+        {
+          "category": "FINANCE",
+          "count": 118,
+          "percentage": 4.75,
+          "balanced_weight": 0.8771
+        },
+        {
+          "category": "ENGINEERING",
+          "count": 118,
+          "percentage": 4.75,
+          "balanced_weight": 0.8771
+        },
+        {
+          "category": "ACCOUNTANT",
+          "count": 118,
+          "percentage": 4.75,
+          "balanced_weight": 0.8771
+        },
+        {
+          "category": "FITNESS",
+          "count": 117,
+          "percentage": 4.71,
+          "balanced_weight": 0.8846
+        },
+        {
+          "category": "AVIATION",
+          "count": 117,
+          "percentage": 4.71,
+          "balanced_weight": 0.8846
+        },
+        {
+          "category": "SALES",
+          "count": 116,
+          "percentage": 4.67,
+          "balanced_weight": 0.8922
+        },
+        {
+          "category": "HEALTHCARE",
+          "count": 115,
+          "percentage": 4.63,
+          "balanced_weight": 0.9
+        },
+        {
+          "category": "CONSULTANT",
+          "count": 115,
+          "percentage": 4.63,
+          "balanced_weight": 0.9
+        },
+        {
+          "category": "BANKING",
+          "count": 115,
+          "percentage": 4.63,
+          "balanced_weight": 0.9
+        },
+        {
+          "category": "CONSTRUCTION",
+          "count": 112,
+          "percentage": 4.51,
+          "balanced_weight": 0.9241
+        },
+        {
+          "category": "PUBLIC-RELATIONS",
+          "count": 111,
+          "percentage": 4.47,
+          "balanced_weight": 0.9324
+        },
+        {
+          "category": "HR",
+          "count": 110,
+          "percentage": 4.43,
+          "balanced_weight": 0.9409
+        },
+        {
+          "category": "DESIGNER",
+          "count": 107,
+          "percentage": 4.31,
+          "balanced_weight": 0.9673
+        },
+        {
+          "category": "ARTS",
+          "count": 103,
+          "percentage": 4.15,
+          "balanced_weight": 1.0049
+        },
+        {
+          "category": "TEACHER",
+          "count": 102,
+          "percentage": 4.11,
+          "balanced_weight": 1.0147
+        },
+        {
+          "category": "APPAREL",
+          "count": 97,
+          "percentage": 3.9,
+          "balanced_weight": 1.067
+        },
+        {
+          "category": "DIGITAL-MEDIA",
+          "count": 96,
+          "percentage": 3.86,
+          "balanced_weight": 1.0781
+        },
+        {
+          "category": "AGRICULTURE",
+          "count": 63,
+          "percentage": 2.54,
+          "balanced_weight": 1.6429
+        },
+        {
+          "category": "AUTOMOBILE",
+          "count": 36,
+          "percentage": 1.45,
+          "balanced_weight": 2.875
+        },
+        {
+          "category": "BPO",
+          "count": 22,
+          "percentage": 0.89,
+          "balanced_weight": 4.7045
+        }
+      ],
+      "class_weights": {
+        "INFORMATION-TECHNOLOGY": 0.8625,
+        "BUSINESS-DEVELOPMENT": 0.8625,
+        "ADVOCATE": 0.8771,
+        "CHEF": 0.8771,
+        "FINANCE": 0.8771,
+        "ENGINEERING": 0.8771,
+        "ACCOUNTANT": 0.8771,
+        "FITNESS": 0.8846,
+        "AVIATION": 0.8846,
+        "SALES": 0.8922,
+        "HEALTHCARE": 0.9,
+        "CONSULTANT": 0.9,
+        "BANKING": 0.9,
+        "CONSTRUCTION": 0.9241,
+        "PUBLIC-RELATIONS": 0.9324,
+        "HR": 0.9409,
+        "DESIGNER": 0.9673,
+        "ARTS": 1.0049,
+        "TEACHER": 1.0147,
+        "APPAREL": 1.067,
+        "DIGITAL-MEDIA": 1.0781,
+        "AGRICULTURE": 1.6429,
+        "AUTOMOBILE": 2.875,
+        "BPO": 4.7045
+      }
+    },
+    "gaurav_dutta": {
+      "num_classes": 25,
+      "total_records": 962,
+      "entropy": 3.1573,
+      "normalized_entropy": 0.9809,
+      "imbalance_ratio": 4.2,
+      "distribution_table": [
+        {
+          "category": "Java Developer",
+          "count": 84,
+          "percentage": 8.73,
+          "balanced_weight": 0.4581
+        },
+        {
+          "category": "Testing",
+          "count": 70,
+          "percentage": 7.28,
+          "balanced_weight": 0.5497
+        },
+        {
+          "category": "DevOps Engineer",
+          "count": 55,
+          "percentage": 5.72,
+          "balanced_weight": 0.6996
+        },
+        {
+          "category": "Python Developer",
+          "count": 48,
+          "percentage": 4.99,
+          "balanced_weight": 0.8017
+        },
+        {
+          "category": "Web Designing",
+          "count": 45,
+          "percentage": 4.68,
+          "balanced_weight": 0.8551
+        },
+        {
+          "category": "HR",
+          "count": 44,
+          "percentage": 4.57,
+          "balanced_weight": 0.8745
+        },
+        {
+          "category": "Hadoop",
+          "count": 42,
+          "percentage": 4.37,
+          "balanced_weight": 0.9162
+        },
+        {
+          "category": "Data Science",
+          "count": 40,
+          "percentage": 4.16,
+          "balanced_weight": 0.962
+        },
+        {
+          "category": "Mechanical Engineer",
+          "count": 40,
+          "percentage": 4.16,
+          "balanced_weight": 0.962
+        },
+        {
+          "category": "Sales",
+          "count": 40,
+          "percentage": 4.16,
+          "balanced_weight": 0.962
+        },
+        {
+          "category": "Operations Manager",
+          "count": 40,
+          "percentage": 4.16,
+          "balanced_weight": 0.962
+        },
+        {
+          "category": "ETL Developer",
+          "count": 40,
+          "percentage": 4.16,
+          "balanced_weight": 0.962
+        },
+        {
+          "category": "Blockchain",
+          "count": 40,
+          "percentage": 4.16,
+          "balanced_weight": 0.962
+        },
+        {
+          "category": "Arts",
+          "count": 36,
+          "percentage": 3.74,
+          "balanced_weight": 1.0689
+        },
+        {
+          "category": "Database",
+          "count": 33,
+          "percentage": 3.43,
+          "balanced_weight": 1.1661
+        },
+        {
+          "category": "Health and fitness",
+          "count": 30,
+          "percentage": 3.12,
+          "balanced_weight": 1.2827
+        },
+        {
+          "category": "Electrical Engineering",
+          "count": 30,
+          "percentage": 3.12,
+          "balanced_weight": 1.2827
+        },
+        {
+          "category": "PMO",
+          "count": 30,
+          "percentage": 3.12,
+          "balanced_weight": 1.2827
+        },
+        {
+          "category": "Business Analyst",
+          "count": 28,
+          "percentage": 2.91,
+          "balanced_weight": 1.3743
+        },
+        {
+          "category": "DotNet Developer",
+          "count": 28,
+          "percentage": 2.91,
+          "balanced_weight": 1.3743
+        },
+        {
+          "category": "Automation Testing",
+          "count": 26,
+          "percentage": 2.7,
+          "balanced_weight": 1.48
+        },
+        {
+          "category": "Network Security Engineer",
+          "count": 25,
+          "percentage": 2.6,
+          "balanced_weight": 1.5392
+        },
+        {
+          "category": "Civil Engineer",
+          "count": 24,
+          "percentage": 2.49,
+          "balanced_weight": 1.6033
+        },
+        {
+          "category": "SAP Developer",
+          "count": 24,
+          "percentage": 2.49,
+          "balanced_weight": 1.6033
+        },
+        {
+          "category": "Advocate",
+          "count": 20,
+          "percentage": 2.08,
+          "balanced_weight": 1.924
+        }
+      ],
+      "class_weights": {
+        "Java Developer": 0.4581,
+        "Testing": 0.5497,
+        "DevOps Engineer": 0.6996,
+        "Python Developer": 0.8017,
+        "Web Designing": 0.8551,
+        "HR": 0.8745,
+        "Hadoop": 0.9162,
+        "Data Science": 0.962,
+        "Mechanical Engineer": 0.962,
+        "Sales": 0.962,
+        "Operations Manager": 0.962,
+        "ETL Developer": 0.962,
+        "Blockchain": 0.962,
+        "Arts": 1.0689,
+        "Database": 1.1661,
+        "Health and fitness": 1.2827,
+        "Electrical Engineering": 1.2827,
+        "PMO": 1.2827,
+        "Business Analyst": 1.3743,
+        "DotNet Developer": 1.3743,
+        "Automation Testing": 1.48,
+        "Network Security Engineer": 1.5392,
+        "Civil Engineer": 1.6033,
+        "SAP Developer": 1.6033,
+        "Advocate": 1.924
+      }
+    },
+    "combined": {
+      "num_classes": 48,
+      "total_records": 3446,
+      "entropy": 3.7089,
+      "normalized_entropy": 0.9581,
+      "imbalance_ratio": 7.7,
+      "distribution_table": [
+        {
+          "category": "HR",
+          "count": 154,
+          "percentage": 4.47,
+          "balanced_weight": 0.4662
+        },
+        {
+          "category": "INFORMATION-TECHNOLOGY",
+          "count": 120,
+          "percentage": 3.48,
+          "balanced_weight": 0.5983
+        },
+        {
+          "category": "BUSINESS-DEVELOPMENT",
+          "count": 120,
+          "percentage": 3.48,
+          "balanced_weight": 0.5983
+        },
+        {
+          "category": "ADVOCATE",
+          "count": 118,
+          "percentage": 3.42,
+          "balanced_weight": 0.6084
+        },
+        {
+          "category": "CHEF",
+          "count": 118,
+          "percentage": 3.42,
+          "balanced_weight": 0.6084
+        },
+        {
+          "category": "FINANCE",
+          "count": 118,
+          "percentage": 3.42,
+          "balanced_weight": 0.6084
+        },
+        {
+          "category": "ENGINEERING",
+          "count": 118,
+          "percentage": 3.42,
+          "balanced_weight": 0.6084
+        },
+        {
+          "category": "ACCOUNTANT",
+          "count": 118,
+          "percentage": 3.42,
+          "balanced_weight": 0.6084
+        },
+        {
+          "category": "FITNESS",
+          "count": 117,
+          "percentage": 3.4,
+          "balanced_weight": 0.6136
+        },
+        {
+          "category": "AVIATION",
+          "count": 117,
+          "percentage": 3.4,
+          "balanced_weight": 0.6136
+        },
+        {
+          "category": "SALES",
+          "count": 116,
+          "percentage": 3.37,
+          "balanced_weight": 0.6189
+        },
+        {
+          "category": "HEALTHCARE",
+          "count": 115,
+          "percentage": 3.34,
+          "balanced_weight": 0.6243
+        },
+        {
+          "category": "CONSULTANT",
+          "count": 115,
+          "percentage": 3.34,
+          "balanced_weight": 0.6243
+        },
+        {
+          "category": "BANKING",
+          "count": 115,
+          "percentage": 3.34,
+          "balanced_weight": 0.6243
+        },
+        {
+          "category": "CONSTRUCTION",
+          "count": 112,
+          "percentage": 3.25,
+          "balanced_weight": 0.641
+        },
+        {
+          "category": "PUBLIC-RELATIONS",
+          "count": 111,
+          "percentage": 3.22,
+          "balanced_weight": 0.6468
+        },
+        {
+          "category": "DESIGNER",
+          "count": 107,
+          "percentage": 3.11,
+          "balanced_weight": 0.671
+        },
+        {
+          "category": "ARTS",
+          "count": 103,
+          "percentage": 2.99,
+          "balanced_weight": 0.697
+        },
+        {
+          "category": "TEACHER",
+          "count": 102,
+          "percentage": 2.96,
+          "balanced_weight": 0.7038
+        },
+        {
+          "category": "APPAREL",
+          "count": 97,
+          "percentage": 2.81,
+          "balanced_weight": 0.7401
+        },
+        {
+          "category": "DIGITAL-MEDIA",
+          "count": 96,
+          "percentage": 2.79,
+          "balanced_weight": 0.7478
+        },
+        {
+          "category": "Java Developer",
+          "count": 84,
+          "percentage": 2.44,
+          "balanced_weight": 0.8547
+        },
+        {
+          "category": "Testing",
+          "count": 70,
+          "percentage": 2.03,
+          "balanced_weight": 1.0256
+        },
+        {
+          "category": "AGRICULTURE",
+          "count": 63,
+          "percentage": 1.83,
+          "balanced_weight": 1.1396
+        },
+        {
+          "category": "DevOps Engineer",
+          "count": 55,
+          "percentage": 1.6,
+          "balanced_weight": 1.3053
+        },
+        {
+          "category": "Python Developer",
+          "count": 48,
+          "percentage": 1.39,
+          "balanced_weight": 1.4957
+        },
+        {
+          "category": "Web Designing",
+          "count": 45,
+          "percentage": 1.31,
+          "balanced_weight": 1.5954
+        },
+        {
+          "category": "Hadoop",
+          "count": 42,
+          "percentage": 1.22,
+          "balanced_weight": 1.7093
+        },
+        {
+          "category": "Data Science",
+          "count": 40,
+          "percentage": 1.16,
+          "balanced_weight": 1.7948
+        },
+        {
+          "category": "Mechanical Engineer",
+          "count": 40,
+          "percentage": 1.16,
+          "balanced_weight": 1.7948
+        },
+        {
+          "category": "Sales",
+          "count": 40,
+          "percentage": 1.16,
+          "balanced_weight": 1.7948
+        },
+        {
+          "category": "Operations Manager",
+          "count": 40,
+          "percentage": 1.16,
+          "balanced_weight": 1.7948
+        },
+        {
+          "category": "ETL Developer",
+          "count": 40,
+          "percentage": 1.16,
+          "balanced_weight": 1.7948
+        },
+        {
+          "category": "Blockchain",
+          "count": 40,
+          "percentage": 1.16,
+          "balanced_weight": 1.7948
+        },
+        {
+          "category": "AUTOMOBILE",
+          "count": 36,
+          "percentage": 1.04,
+          "balanced_weight": 1.9942
+        },
+        {
+          "category": "Arts",
+          "count": 36,
+          "percentage": 1.04,
+          "balanced_weight": 1.9942
+        },
+        {
+          "category": "Database",
+          "count": 33,
+          "percentage": 0.96,
+          "balanced_weight": 2.1755
+        },
+        {
+          "category": "Health and fitness",
+          "count": 30,
+          "percentage": 0.87,
+          "balanced_weight": 2.3931
+        },
+        {
+          "category": "Electrical Engineering",
+          "count": 30,
+          "percentage": 0.87,
+          "balanced_weight": 2.3931
+        },
+        {
+          "category": "PMO",
+          "count": 30,
+          "percentage": 0.87,
+          "balanced_weight": 2.3931
+        },
+        {
+          "category": "Business Analyst",
+          "count": 28,
+          "percentage": 0.81,
+          "balanced_weight": 2.564
+        },
+        {
+          "category": "DotNet Developer",
+          "count": 28,
+          "percentage": 0.81,
+          "balanced_weight": 2.564
+        },
+        {
+          "category": "Automation Testing",
+          "count": 26,
+          "percentage": 0.75,
+          "balanced_weight": 2.7612
+        },
+        {
+          "category": "Network Security Engineer",
+          "count": 25,
+          "percentage": 0.73,
+          "balanced_weight": 2.8717
+        },
+        {
+          "category": "Civil Engineer",
+          "count": 24,
+          "percentage": 0.7,
+          "balanced_weight": 2.9913
+        },
+        {
+          "category": "SAP Developer",
+          "count": 24,
+          "percentage": 0.7,
+          "balanced_weight": 2.9913
+        },
+        {
+          "category": "BPO",
+          "count": 22,
+          "percentage": 0.64,
+          "balanced_weight": 3.2633
+        },
+        {
+          "category": "Advocate",
+          "count": 20,
+          "percentage": 0.58,
+          "balanced_weight": 3.5896
+        }
+      ],
+      "class_weights": {
+        "HR": 0.4662,
+        "INFORMATION-TECHNOLOGY": 0.5983,
+        "BUSINESS-DEVELOPMENT": 0.5983,
+        "ADVOCATE": 0.6084,
+        "CHEF": 0.6084,
+        "FINANCE": 0.6084,
+        "ENGINEERING": 0.6084,
+        "ACCOUNTANT": 0.6084,
+        "FITNESS": 0.6136,
+        "AVIATION": 0.6136,
+        "SALES": 0.6189,
+        "HEALTHCARE": 0.6243,
+        "CONSULTANT": 0.6243,
+        "BANKING": 0.6243,
+        "CONSTRUCTION": 0.641,
+        "PUBLIC-RELATIONS": 0.6468,
+        "DESIGNER": 0.671,
+        "ARTS": 0.697,
+        "TEACHER": 0.7038,
+        "APPAREL": 0.7401,
+        "DIGITAL-MEDIA": 0.7478,
+        "Java Developer": 0.8547,
+        "Testing": 1.0256,
+        "AGRICULTURE": 1.1396,
+        "DevOps Engineer": 1.3053,
+        "Python Developer": 1.4957,
+        "Web Designing": 1.5954,
+        "Hadoop": 1.7093,
+        "Data Science": 1.7948,
+        "Mechanical Engineer": 1.7948,
+        "Sales": 1.7948,
+        "Operations Manager": 1.7948,
+        "ETL Developer": 1.7948,
+        "Blockchain": 1.7948,
+        "AUTOMOBILE": 1.9942,
+        "Arts": 1.9942,
+        "Database": 2.1755,
+        "Health and fitness": 2.3931,
+        "Electrical Engineering": 2.3931,
+        "PMO": 2.3931,
+        "Business Analyst": 2.564,
+        "DotNet Developer": 2.564,
+        "Automation Testing": 2.7612,
+        "Network Security Engineer": 2.8717,
+        "Civil Engineer": 2.9913,
+        "SAP Developer": 2.9913,
+        "BPO": 3.2633,
+        "Advocate": 3.5896
+      }
+    }
+  },
+  "provenance_and_licensing": {
+    "opensporks": {
+      "source": "https://huggingface.co/datasets/opensporks/resumes",
+      "original_author": "Snehaan Bhawal (Kaggle), mirrored on Hugging Face by opensporks",
+      "declared_license": "CC0: Public Domain (on Hugging Face repository)",
+      "legal_reality": "Scraped from LiveCareer public user resumes. LiveCareer terms prohibit automated scraping. Contains creative text of real job applicants.",
+      "description": "2,484 resumes categorized into 24 broad industry categories (e.g. INFORMATION-TECHNOLOGY, HR, FINANCE, ADVOCATE)."
+    },
+    "gaurav_dutta": {
+      "source": "https://raw.githubusercontent.com/611noorsaeed/Resume-Screening-App/main/UpdatedResumeDataSet.csv",
+      "original_author": "Gaurav Dutta (Kaggle UpdatedResumeDataSet)",
+      "declared_license": "CC0: Public Domain (on Kaggle)",
+      "legal_reality": "Scraped from Indian job portals and candidate profiles. Resumes repeated multiple times. Cannot be claimed as commercially cleared.",
+      "description": "962 records covering 25 IT/engineering job roles with high intra-dataset duplication (166 unique texts)."
+    }
+  }
+}

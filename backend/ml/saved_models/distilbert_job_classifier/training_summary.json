@@ -1,0 +1,71 @@
+{
+  "timestamp": "2026-11-21T19:47:57",
+  "hardware": {
+    "processor": "Intel Core i7-1355U (12 logical cores)",
+    "device": "cpu",
+    "threads_used": 8,
+    "total_system_ram_gb": 15.72
+  },
+  "hyperparameters": {
+    "model_name": "distilbert-base-uncased",
+    "num_classes": 24,
+    "sequence_length": 256,
+    "batch_size": 16,
+    "epochs": 3,
+    "learning_rate": 2e-05,
+    "weight_decay": 0.01,
+    "warmup_ratio": 0.1,
+    "total_steps": 372,
+    "loss_function": "Weighted Cross-Entropy"
+  },
+  "dataset_split": {
+    "dataset_name": "opensporks_sanitized",
+    "total_unique": 2481,
+    "train_samples": 1979,
+    "val_samples": 251,
+    "test_samples": 251
+  },
+  "training_performance": {
+    "total_training_seconds": 3026.64,
+    "total_training_minutes": 50.44,
+    "peak_process_rss_mb": 1795.93,
+    "peak_process_rss_gb": 1.75,
+    "average_cpu_percent": 72.3,
+    "best_val_macro_f1": 0.7172
+  },
+  "epoch_history": [
+    {
+      "epoch": 1,
+      "train_loss": 2.9985,
+      "val_loss": 2.41,
+      "val_accuracy": 0.6653,
+      "val_macro_f1": 0.5753,
+      "val_weighted_f1": 0.6226,
+      "epoch_runtime_seconds": 965.24,
+      "epoch_runtime_minutes": 16.09,
+      "is_best": true
+    },
+    {
+      "epoch": 2,
+      "train_loss": 2.0227,
+      "val_loss": 1.5489,
+      "val_accuracy": 0.7849,
+      "val_macro_f1": 0.6995,
+      "val_weighted_f1": 0.7597,
+      "epoch_runtime_seconds": 947.29,
+      "epoch_runtime_minutes": 15.79,
+      "is_best": true
+    },
+    {
+      "epoch": 3,
+      "train_loss": 1.523,
+      "val_loss": 1.3782,
+      "val_accuracy": 0.7928,
+      "val_macro_f1": 0.7172,
+      "val_weighted_f1": 0.7729,
+      "epoch_runtime_seconds": 1015.76,
+      "epoch_runtime_minutes": 16.93,
+      "is_best": true
+    }
+  ]
+}
